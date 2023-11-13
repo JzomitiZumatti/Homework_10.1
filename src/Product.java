@@ -23,12 +23,6 @@ public class Product {
     }
 
     public Product(String type, double price, boolean discount, LocalDateTime dateAdded) {
-        // for testing getLastThreeAddedProducts() method
-        /*try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
         this.type = type;
         this.price = price;
         this.discount = discount;
@@ -68,7 +62,7 @@ public class Product {
         return Stream.of(
                         "type: \"" + type + "\"",
                         "price: " + price,
-                        (discount) ? "discount: " + discount : "discount: false",
+                        "discount: " + discount,
                         (dateAdded != null) ? "createDate: " + dateAdded.format(dateFormatter) : null
                 )
                 .filter(Objects::nonNull)
